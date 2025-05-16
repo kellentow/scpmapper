@@ -1,2 +1,4 @@
 /target
 /ship
+scpmapper
+# This is just in case devs want to symlink for ease

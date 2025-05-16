@@ -30,9 +30,10 @@ As far as I have tested, LCZ requires the shortest paths. HCZ is hit-or-miss, so
 ### Etc
 You pretty much need a separate monitor for this to work, or a transparent terminal that you can overlay the game.
 
-Currently only supported on Windows, but I think Linux should work out-of-the-box. Anyways, if you got SCP:SL running on Linux, I'm sure you can figure this out. 
+Currently supported on Windows and Linux!
 
 Make no remarks about the architecture/general programming, it's not clean, particularly extensible (I don't think NW will make new maps anytime soon though) or efficient but it works. Rust is fast and the task it is doing is minimal. Though if you still feel very strongly about it, do please refactor my code :D
+
 
 ### Credits
 Credit to downloadpizza for the layouts as text files, here:

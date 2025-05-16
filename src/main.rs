@@ -28,6 +28,8 @@ struct Layout{
 }
 
 fn main() {
+    // linux uses auto ansi anyways
+    #[cfg(target_os = "windows")]
     enable_virtual_terminal_processing();
     println!("scpmapper v1.0.1");
 
@@ -35,16 +37,16 @@ fn main() {
 
 
     let layout_meta = read_to_string("layouts.txt").unwrap();
-    let layout_meta = layout_meta.split("\r\n").map(|row| {
+    let layout_meta = layout_meta.lines().map(|row| {
         row.split(" ").collect::<Vec<&str>>()
     }).collect::<Vec<Vec<&str>>>();
 
     let mut layouts = layout_meta.iter().map(|map| {
-        let path = format!("scp-sl-layouts/{}/{}.txt", map[1], map[2]);
+        let path = format!("./scp-sl-layouts/{}/{}.txt", map[1], map[2]);
         Layout{
             map: {
                 let file = read_to_string(path).unwrap();
-                file.split("\r\n").map(|x| x.chars().collect()).collect::<Vec<Vec<char>>>()
+                file.lines().map(|x| x.chars().collect()).collect::<Vec<Vec<char>>>()
             },
             name: map[0].to_string(),
             paths: vec![],
@@ -55,7 +57,7 @@ fn main() {
     // Load char-to-direction file
     let mut char_to_dirs: HashMap<char, Vec<Direction>> = HashMap::new();
     let charmap_file = read_to_string("chars.txt").unwrap();
-    for row in charmap_file.split("\r\n") {
+    for row in charmap_file.lines() {
         let mut split = row.split(" ");
         char_to_dirs.insert(split.next().unwrap().chars().next().unwrap(), split.map(|dir| match dir{
             "up" => Direction::Up,
