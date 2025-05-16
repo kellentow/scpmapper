@@ -93,7 +93,7 @@ fn main() {
         'check_all: for a in 0..layouts.len(){ // Iterate through all paths
             for b in 0..layouts[a].paths.len(){
                 if layouts[a].paths[b].2 {continue;}
-                if layouts[a].paths[b].1.len() > 10{layouts[a].paths[b].2 = true; continue;} // Max path length is 10, to stop loops
+                if layouts[a].paths[b].1.len() > 15{layouts[a].paths[b].2 = true; continue;} // Max path length is 10, to stop loops
                 for x in 0..layouts.len(){ // And match them against all others
                     if layouts[x].zone != layouts[a].zone {continue;}
                     for y in 0..layouts[x].paths.len(){

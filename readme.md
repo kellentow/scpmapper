@@ -3,6 +3,8 @@ A simple tool that helps you navigate in SCP: Secret Lab without injecting/hacki
 
 Get the latest version from the [Releases](https://github.com/grufkork/scpmapper/releases) or download and run it yourself.
 
+# ONLY LIGHT IS UP TO DATA FOR 14.1
+
 ## Usage
 Being with selecting your current zone with either the arrow keys or the numpad. Then go to any room in the level (D-Class spawn and the entrance/heavy gate counts). Then start walking anywhere and input where you go: 
 
@@ -20,9 +22,10 @@ As soon as a unique match is found the map for the level is displayed. The red s
 
 There are some things to consider though: 
 
+- Room corridors do not count (ex: Light straight hall with restrooms, Heavy corner with research room/dog spawn)
 - Try not to pick a too short path. Entering a room might be what's needed to get a unique match, but in most cases there will be multiple matches and you'll have to start over. Just go through corridors until it matches.
 - Certain paths and levels might take a couple of steps to find a unique path. Try not to go in loops, as multiple paths feed into them.
-- Some paths are never unique. In particular, symmetrical maps have paths that can be rotatated to fit in many places. Especially bad is the HCZ map "Window", which has a pattern with very few unique features. Not all paths can be picked out uniquely. 
+- Some paths are never unique. In particular, symmetrical maps have paths that can be rotated to fit in many places. Especially bad is the HCZ map "Window", which has a pattern with very few unique features. Not all paths can be picked out uniquely. 
 - The maximum length of a path is 10 steps, to stop loops. This is an arbitrary number though, but any longer than that and you have already found all rooms. Longer paths -> longer startup times as well.
 
 As far as I have tested, LCZ requires the shortest paths. HCZ is hit-or-miss, sometimes the unique paths are very short but sometimes you might never find a match. In EZ you will find eventually, but large parts can be similar.
@@ -36,7 +39,9 @@ Make no remarks about the architecture/general programming, it's not clean, part
 
 
 ### Credits
-Credit to downloadpizza for the layouts as text files, here:
+Credit to downloadpizza for the older layouts as text files, here:
 https://github.com/downloadpizza/scp-sl-layouts
 
 Which in turn are (at least partially) based on https://steamcommunity.com/sharedfiles/filedetails/?id=1943822063
+
+Credit to kellentow for the 14.1 for the new layout text files
