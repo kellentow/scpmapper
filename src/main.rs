@@ -30,7 +30,7 @@ fn main() {
     #[cfg(target_os = "windows")]
     enable_virtual_terminal_processing();
     #[cfg(target_os = "linux")]
-    print!("TURN ON ANSI CODES, THIS WONT WORK WELL OTHERWISE\r\x1B[J");
+    println!("TURN ON ANSI CODES, THIS WONT WORK WELL OTHERWISE\r\x1B[J");
     println!("scpmapper v1.0.1");
 
     let loop_time = Duration::from_millis(33);
@@ -214,8 +214,8 @@ fn main() {
             0=> {
                 println!();
                 println!("Select zone...");
-                println!("← Entrance");
-                println!("↑ Heavy Containment");
+                println!("← Entrance (PRE v14 LAYOUTS)");
+                println!("↑ Heavy Containment (PRE v14 LAYOUTS)");
                 println!("→ Light Containment");
                 state = 1;
             },
