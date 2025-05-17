@@ -1,8 +1,8 @@
-Arms light arms_lz
-Loop light loop_lz
-Heart light heart_lz
-Ring light ring_lz
-Line light line_lz
+Brain light brain_lz
+Clothes light clothes_lz
+Controller light controller_lz
+Skull light skull_lz
+Stool light stool_lz
 Bonbon heavy bonbon_hz
 Line heavy line_hz
 Rectangle heavy rectangle_hz

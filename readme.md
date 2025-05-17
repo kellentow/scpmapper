@@ -26,7 +26,7 @@ There are some things to consider though:
 - Try not to pick a too short path. Entering a room might be what's needed to get a unique match, but in most cases there will be multiple matches and you'll have to start over. Just go through corridors until it matches.
 - Certain paths and levels might take a couple of steps to find a unique path. Try not to go in loops, as multiple paths feed into them.
 - Some paths are never unique. In particular, symmetrical maps have paths that can be rotated to fit in many places. Especially bad is the HCZ map "Window", which has a pattern with very few unique features. Not all paths can be picked out uniquely. 
-- The maximum length of a path is 10 steps, to stop loops. This is an arbitrary number though, but any longer than that and you have already found all rooms. Longer paths -> longer startup times as well.
+- The maximum length of a path is 15 steps, to stop loops. This is an arbitrary number though, but any longer than that and you have already found all rooms. Longer paths -> longer startup times as well.
 
 As far as I have tested, LCZ requires the shortest paths. HCZ is hit-or-miss, sometimes the unique paths are very short but sometimes you might never find a match. In EZ you will find eventually, but large parts can be similar.
 

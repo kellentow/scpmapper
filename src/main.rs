@@ -3,7 +3,6 @@ use std::{cmp::max, collections::HashMap, io::{Write, stdout}, thread::sleep};
 use std::time::Duration;
 use std::fs::read_to_string;
 
-
 #[derive(Copy, Clone, PartialEq, Eq)]
 enum Direction{
     Up,
@@ -28,9 +27,10 @@ struct Layout{
 }
 
 fn main() {
-    // linux uses auto ansi anyways
     #[cfg(target_os = "windows")]
     enable_virtual_terminal_processing();
+    #[cfg(target_os = "linux")]
+    print!("TURN ON ANSI CODES, THIS WONT WORK WELL OTHERWISE\r\x1B[J");
     println!("scpmapper v1.0.1");
 
     let loop_time = Duration::from_millis(33);
@@ -45,7 +45,13 @@ fn main() {
         let path = format!("./scp-sl-layouts/{}/{}.txt", map[1], map[2]);
         Layout{
             map: {
-                let file = read_to_string(path).unwrap();
+                let file = match read_to_string(&path) {
+                    Ok(content) => content,
+                    Err(e) => {
+                        eprintln!("Failed to read {}: {}", path, e);
+                        String::new()
+                    }
+                };
                 file.lines().map(|x| x.chars().collect()).collect::<Vec<Vec<char>>>()
             },
             name: map[0].to_string(),
@@ -86,7 +92,7 @@ fn main() {
     }
 
     // Find unique paths from each room
-    print!("Building Paths...");
+    print!("Building Paths...\n");
     loop{
         let mut all_good = true;
         let mut paths_to_extend: Vec<(usize, usize)> = vec![];
@@ -151,14 +157,16 @@ fn main() {
             stdout().flush().unwrap();
         }
     }
-    println!();
 
     let mut pressed_last_frame = false;
     let mut keydown = false;
 
     let mut dirstring = "".to_string();
 
-    println!("Started!");
+    //go to under Building Paths...
+    //clear all text after cursor
+    //print Started!
+    println!("\x1B[J\rStarted!");
 
     let mut zone = Zone::Entrance;
     let mut state = 0; // 0 = select zone, 1 = awaiting selection, 2 = finding zone
