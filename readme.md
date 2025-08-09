@@ -1,9 +1,9 @@
 # scpmapper
 A simple tool that helps you navigate in SCP: Secret Lab without injecting/hacking the game itself. 
 
-Get the latest version from the [Releases](https://github.com/grufkork/scpmapper/releases) or download and run it yourself.
+Get the latest version from the [Releases](https://github.com/kellentow/scpmapper/releases) or download and run it yourself.
 
-# ONLY LIGHT IS UP TO DATA FOR 14.1
+# ONLY LIGHT & ENTRANCE IS UP TO DATE FOR 14.1
 
 ## Usage
 Being with selecting your current zone with either the arrow keys or the numpad. Then go to any room in the level (D-Class spawn and the entrance/heavy gate counts). Then start walking anywhere and input where you go: 
@@ -34,6 +34,7 @@ As far as I have tested, LCZ requires the shortest paths. HCZ is hit-or-miss, so
 You pretty much need a separate monitor for this to work, or a transparent terminal that you can overlay the game.
 
 Currently supported on Windows and Linux!
+Mac is iffy because neither me nor the og dev owns a mac so we can't test it, if you have a mac please test it
 
 Make no remarks about the architecture/general programming, it's not clean, particularly extensible (I don't think NW will make new maps anytime soon though) or efficient but it works. Rust is fast and the task it is doing is minimal. Though if you still feel very strongly about it, do please refactor my code :D
 
@@ -45,3 +46,5 @@ https://github.com/downloadpizza/scp-sl-layouts
 Which in turn are (at least partially) based on https://steamcommunity.com/sharedfiles/filedetails/?id=1943822063
 
 Credit to kellentow for the 14.1 for the new layout text files
+
+Layout files are based on https://steamcommunity.com/sharedfiles/filedetails/?id=2919451768
